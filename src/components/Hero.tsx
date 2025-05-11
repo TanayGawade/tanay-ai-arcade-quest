@@ -20,13 +20,7 @@ const Hero: React.FC = () => {
     setGameStarted(true);
     setShowPressStart(false);
     
-    // Scroll to about section
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      setTimeout(() => {
-        aboutSection.scrollIntoView({ behavior: "smooth" });
-      }, 500);
-    }
+    // Removed auto-scrolling to about section
   };
 
   return (
