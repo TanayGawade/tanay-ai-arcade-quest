@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import PixelAvatar from "./PixelAvatar";
 
@@ -66,10 +65,12 @@ const Hero: React.FC = () => {
                 deep learning, natural language processing, computer vision, and data analytics.
               </p>
               <a 
-                href="#portfolio" 
+                href="https://drive.google.com/file/d/1h9UnXbNj9PRB8lG2Mz5rl3a7ncqXhFc6/view" 
                 className="pixel-button inline-block"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                VIEW PROJECTS
+                VIEW RESUME
               </a>
             </div>
           )}
