@@ -21,15 +21,16 @@ const ScrollToTop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    // Handle hash in URL if present (but we're not using this currently)
+    // Disable automatic hash scrolling on initial load
+    // Only handle hash navigation after the page has fully loaded
     const hash = window.location.hash;
-    if (hash) {
+    if (hash && document.readyState === 'complete') {
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
           element.scrollIntoView();
         }
-      }, 0);
+      }, 100);
     }
   }, []);
   
