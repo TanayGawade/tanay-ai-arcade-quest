@@ -101,12 +101,7 @@ const About: React.FC = () => {
 
             <div className="mt-8 p-4 border-2 border-dashed border-gameboy-dark dark:border-gameboy-accent">
               <h4 className="font-pixel text-sm text-gameboy-dark dark:text-gameboy-accent mb-2">BIO</h4>
-              <p className="text-gameboy-dark dark:text-gameboy-light text-sm">
-                Tanay has been on an epic quest to master the art of Artificial Intelligence. 
-                After completing his training at the University of Mumbai, he embarked on a journey to 
-                Yeshiva University where he gained advanced AI powers. Now he uses these abilities to 
-                tackle complex challenges in machine learning and AI development.
-              </p>
+              <p className="text-gameboy-dark dark:text-gameboy-light text-sm">I am an emerging professional in Artificial Intelligence. My journey in tech began with a fascination for machine learning and deep learning, which I’ve channeled into projects ranging from time-series forecasting for supply chain optimization to GPU-accelerated image segmentation pipelines. I focus on building scalable ML models that solve real-world problems and drive impactful insights. </p>
             </div>
           </div>
         </div>

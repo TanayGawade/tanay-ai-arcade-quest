@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PixelAvatar from "./PixelAvatar";
-
 const Hero: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showPressStart, setShowPressStart] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
-
   useEffect(() => {
     // Simulate loading
     const timer = setTimeout(() => {
@@ -14,26 +12,21 @@ const Hero: React.FC = () => {
     }, 1500);
     return () => clearTimeout(timer);
   }, []);
-
   const handleStart = () => {
     setGameStarted(true);
     setShowPressStart(false);
-    
+
     // Removed auto-scrolling to about section
   };
-
-  return (
-    <div id="home" className="min-h-screen pt-16 flex flex-col items-center justify-center relative overflow-hidden">
-      {!isLoaded ? (
-        // Loading Screen
-        <div className="w-full max-w-md text-center">
+  return <div id="home" className="min-h-screen pt-16 flex flex-col items-center justify-center relative overflow-hidden">
+      {!isLoaded ?
+    // Loading Screen
+    <div className="w-full max-w-md text-center">
           <h2 className="font-pixel text-gameboy-dark dark:text-gameboy-accent mb-4">LOADING ASSETS...</h2>
           <div className="progress-bar mx-auto">
             <div className="progress-fill animate-progress-fill"></div>
           </div>
-        </div>
-      ) : (
-        <div className="container mx-auto px-4 text-center">
+        </div> : <div className="container mx-auto px-4 text-center">
           <div className={`transition-all duration-500 ${gameStarted ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-10'}`}>
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-pixel text-gameboy-dark dark:text-gameboy-accent mb-2">
               TANAY GAWADE
@@ -47,43 +40,25 @@ const Hero: React.FC = () => {
             <PixelAvatar className={`transition-all duration-500 ${gameStarted ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`} />
           </div>
 
-          {showPressStart && (
-            <div className="animate-blink">
-              <button 
-                onClick={handleStart}
-                className="font-pixel text-lg sm:text-xl text-gameboy-dark dark:text-gameboy-accent hover:text-gameboy-green dark:hover:text-gameboy-light transition-colors"
-              >
+          {showPressStart && <div className="animate-blink">
+              <button onClick={handleStart} className="font-pixel text-lg sm:text-xl text-gameboy-dark dark:text-gameboy-accent hover:text-gameboy-green dark:hover:text-gameboy-light transition-colors">
                 PRESS START
               </button>
-            </div>
-          )}
+            </div>}
 
-          {gameStarted && (
-            <div className="mt-10 animate-pixel-pop">
-              <p className="mb-6 text-gameboy-dark dark:text-gameboy-light max-w-2xl mx-auto">
-                Welcome to my AI adventure! I'm an Artificial Intelligence specialist with expertise in machine learning, 
-                deep learning, natural language processing, computer vision, and data analytics.
-              </p>
-              <a 
-                href="https://drive.google.com/file/d/1h9UnXbNj9PRB8lG2Mz5rl3a7ncqXhFc6/view" 
-                className="pixel-button inline-block"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+          {gameStarted && <div className="mt-10 animate-pixel-pop">
+              <p className="mb-6 text-gameboy-dark dark:text-gameboy-light max-w-2xl mx-auto py-0 px-[29px]">Welcome to my AI adventure! I'm an Artificial Intelligence specialist with expertise in machine learning, deep learning, natural language processing, computer vision, and data analytics. Armed with powerful tools like Python, SQL, R & AWS, I tackle real-world quests.</p>
+              <a href="https://drive.google.com/file/d/1h9UnXbNj9PRB8lG2Mz5rl3a7ncqXhFc6/view" className="pixel-button inline-block" target="_blank" rel="noopener noreferrer">
                 VIEW RESUME
               </a>
-            </div>
-          )}
-        </div>
-      )}
+            </div>}
+        </div>}
 
       {/* CRT effect overlay */}
       <div className="crt-effect absolute inset-0 pointer-events-none"></div>
       
       {/* Decorative pixel "scanlines" */}
       <div className="absolute bottom-0 left-0 right-0 h-4 bg-gameboy-green dark:bg-gameboy-accent opacity-20"></div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
