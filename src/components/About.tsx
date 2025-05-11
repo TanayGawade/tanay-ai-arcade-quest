@@ -1,24 +1,35 @@
-
 import React from "react";
-
 const About: React.FC = () => {
-  const skills = [
-    { name: "Machine Learning", level: 95 },
-    { name: "Deep Learning", level: 90 },
-    { name: "Natural Language Processing", level: 85 },
-    { name: "Computer Vision", level: 80 },
-    { name: "Data Analytics", level: 92 }
-  ];
-
-  const stats = [
-    { label: "INT", value: 95 },
-    { label: "DEX", value: 85 },
-    { label: "WIS", value: 90 },
-    { label: "CHA", value: 80 },
-  ];
-
-  return (
-    <section id="about" className="py-20 px-4">
+  const skills = [{
+    name: "Machine Learning",
+    level: 95
+  }, {
+    name: "Deep Learning",
+    level: 90
+  }, {
+    name: "Natural Language Processing",
+    level: 85
+  }, {
+    name: "Computer Vision",
+    level: 80
+  }, {
+    name: "Data Analytics",
+    level: 92
+  }];
+  const stats = [{
+    label: "INT",
+    value: 95
+  }, {
+    label: "DEX",
+    value: 85
+  }, {
+    label: "WIS",
+    value: 90
+  }, {
+    label: "CHA",
+    value: 80
+  }];
+  return <section id="about" className="py-20 px-4">
       <div className="container mx-auto">
         <h2 className="text-2xl md:text-3xl font-pixel text-gameboy-dark dark:text-gameboy-accent mb-12 text-center">
           PLAYER STATS
@@ -43,20 +54,17 @@ const About: React.FC = () => {
 
             <h4 className="font-pixel text-sm text-gameboy-dark dark:text-gameboy-accent mb-2">ATTRIBUTES</h4>
             <div className="grid grid-cols-2 gap-4 mb-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="mb-2">
+              {stats.map(stat => <div key={stat.label} className="mb-2">
                   <div className="flex justify-between mb-1">
                     <span className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-light">{stat.label}</span>
                     <span className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-light">{stat.value}/100</span>
                   </div>
                   <div className="progress-bar">
-                    <div 
-                      className="progress-fill" 
-                      style={{ width: `${stat.value}%` }}
-                    ></div>
+                    <div className="progress-fill" style={{
+                  width: `${stat.value}%`
+                }}></div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <h4 className="font-pixel text-sm text-gameboy-dark dark:text-gameboy-accent mb-2">EQUIPMENT</h4>
@@ -67,9 +75,9 @@ const About: React.FC = () => {
 
             <h4 className="font-pixel text-sm text-gameboy-dark dark:text-gameboy-accent mb-2">SPECIAL ABILITIES</h4>
             <ul className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-light space-y-1">
-              <li>- ALGORITHM OPTIMIZATION</li>
-              <li>- MODEL ARCHITECTURE DESIGN</li>
-              <li>- DATA PREPROCESSING MASTERY</li>
+              <li>- Segmentation & Image Processing    Proficiency </li>
+              <li>- Time-Series Forecasting</li>
+              <li>- Generative AI & LLMs </li>
             </ul>
           </div>
 
@@ -78,20 +86,17 @@ const About: React.FC = () => {
             <h3 className="font-pixel text-xl text-gameboy-dark dark:text-gameboy-accent mb-6">SKILL TREE</h3>
 
             <div className="space-y-6">
-              {skills.map((skill) => (
-                <div key={skill.name} className="mb-4">
+              {skills.map(skill => <div key={skill.name} className="mb-4">
                   <div className="flex justify-between mb-1">
                     <span className="font-pixel text-sm text-gameboy-dark dark:text-gameboy-light">{skill.name}</span>
                     <span className="font-pixel text-sm text-gameboy-dark dark:text-gameboy-light">LVL {Math.floor(skill.level / 10)}</span>
                   </div>
                   <div className="progress-bar">
-                    <div 
-                      className="progress-fill" 
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
+                    <div className="progress-fill" style={{
+                  width: `${skill.level}%`
+                }}></div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="mt-8 p-4 border-2 border-dashed border-gameboy-dark dark:border-gameboy-accent">
@@ -106,8 +111,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;

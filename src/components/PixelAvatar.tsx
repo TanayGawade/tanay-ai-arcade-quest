@@ -13,7 +13,7 @@ const PixelAvatar: React.FC<PixelAvatarProps> = ({
         </div>
       </div>
       <div className="absolute -bottom-2 -right-2 bg-gameboy-light dark:bg-gameboy-dark pixel-border p-1 rounded-md animate-float">
-        <span className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-accent">AI MASTER</span>
+        <span className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-accent">AI ENTHUSIAST</span>
       </div>
     </div>;
 };
