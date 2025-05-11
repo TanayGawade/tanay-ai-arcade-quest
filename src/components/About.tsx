@@ -17,17 +17,17 @@ const About: React.FC = () => {
     level: 92
   }];
   const stats = [{
-    label: "INT",
+    label: "Technical Expertise",
     value: 95
   }, {
-    label: "DEX",
-    value: 85
-  }, {
-    label: "WIS",
+    label: "Problem-Solving",
     value: 90
   }, {
-    label: "CHA",
-    value: 80
+    label: "Adaptability",
+    value: 85
+  }, {
+    label: "Passion",
+    value: 98
   }];
   return <section id="about" className="py-20 px-4">
       <div className="container mx-auto">
@@ -57,12 +57,12 @@ const About: React.FC = () => {
               {stats.map(stat => <div key={stat.label} className="mb-2">
                   <div className="flex justify-between mb-1">
                     <span className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-light">{stat.label}</span>
-                    <span className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-light">{stat.value}/100</span>
                   </div>
-                  <div className="progress-bar">
-                    <div className="progress-fill" style={{
-                  width: `${stat.value}%`
-                }}></div>
+                  <div className="progress-bar relative">
+                    <div className="progress-fill flex items-center justify-center" style={{
+                  width: `${stat.value}%`, height: '100%'}}>
+                      <span className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-light absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center">{stat.value}/100</span>
+                    </div>
                   </div>
                 </div>)}
             </div>
@@ -101,7 +101,12 @@ const About: React.FC = () => {
 
             <div className="mt-8 p-4 border-2 border-dashed border-gameboy-dark dark:border-gameboy-accent">
               <h4 className="font-pixel text-sm text-gameboy-dark dark:text-gameboy-accent mb-2">BIO</h4>
-              <p className="text-gameboy-dark dark:text-gameboy-light text-sm">I am an emerging professional in Artificial Intelligence. My journey in tech began with a fascination for machine learning and deep learning, which I’ve channeled into projects ranging from time-series forecasting for supply chain optimization to GPU-accelerated image segmentation pipelines. I focus on building scalable ML models that solve real-world problems and drive impactful insights. </p>
+              <p className="text-gameboy-dark dark:text-gameboy-light text-sm">
+                Tanay has been on an epic quest to master the art of Artificial Intelligence. 
+                After completing his training at the University of Mumbai, he embarked on a journey to 
+                Yeshiva University where he gained advanced AI powers. Now he uses these abilities to 
+                tackle complex challenges in machine learning and AI development.
+              </p>
             </div>
           </div>
         </div>
