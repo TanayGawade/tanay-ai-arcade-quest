@@ -29,6 +29,7 @@ const Portfolio: React.FC = () => {
         "Model deployed in conservation efforts",
         "Published in academic journals"
       ],
+      image: "/lovable-uploads/e88d4417-d974-40d3-aa3f-c4575c942737.png",
       link: "https://github.com/TanayGawade/Bird_sound_denoising"
     },
     {
@@ -41,6 +42,7 @@ const Portfolio: React.FC = () => {
         "Real-time recognition capabilities",
         "Optimized for edge devices"
       ],
+      image: "/lovable-uploads/d1733c03-8686-4fe0-86bf-37bc5399666c.png",
       link: "https://github.com/TanayGawade/facial-recognition"
     }
   ];

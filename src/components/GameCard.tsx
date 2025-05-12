@@ -27,8 +27,9 @@ const GameCard: React.FC<GameCardProps> = ({
   };
 
   const handleDetailsClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (link) {
-      e.stopPropagation();
+      // Open the link in a new tab
       window.open(link, "_blank", "noopener,noreferrer");
     }
   };
