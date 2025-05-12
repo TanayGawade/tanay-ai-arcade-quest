@@ -62,7 +62,7 @@ const About: React.FC = () => {
                   <div className="progress-bar relative">
                     <div className="progress-fill flex items-center justify-center" style={{
                   width: `${stat.value}%`, height: '100%'}}>
-                      <span className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-light absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center">{stat.value}/100</span>
+                      <span className="font-pixel text-xs text-black dark:text-black absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center">{stat.value}/100</span>
                     </div>
                   </div>
                 </div>)}
