@@ -4,6 +4,7 @@ import GameCard from "./GameCard";
 
 const Portfolio: React.FC = () => {
   const [currentLevel, setCurrentLevel] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const projects = [
     {
@@ -48,11 +49,17 @@ const Portfolio: React.FC = () => {
   ];
 
   const nextLevel = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentLevel((prev) => (prev + 1) % projects.length);
+    setTimeout(() => setIsAnimating(false), 500);
   };
 
   const prevLevel = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentLevel((prev) => (prev - 1 + projects.length) % projects.length);
+    setTimeout(() => setIsAnimating(false), 500);
   };
 
   // Auto scroll the projects every 5 seconds
@@ -77,28 +84,32 @@ const Portfolio: React.FC = () => {
           Each project represents a challenge conquered in my AI journey.
         </p>
 
-        <div className="flex justify-center mb-8 sm:mb-12">
-          <GameCard 
-            title={projects[currentLevel].title}
-            description={projects[currentLevel].description}
-            level={projects[currentLevel].level}
-            technologies={projects[currentLevel].technologies}
-            achievements={projects[currentLevel].achievements}
-            image={projects[currentLevel].image}
-            link={projects[currentLevel].link}
-          />
+        <div className="flex justify-center mb-8 sm:mb-12 overflow-hidden">
+          <div className={`transition-transform duration-500 ${isAnimating ? 'scale-90 opacity-80' : 'scale-100 opacity-100'}`}>
+            <GameCard 
+              title={projects[currentLevel].title}
+              description={projects[currentLevel].description}
+              level={projects[currentLevel].level}
+              technologies={projects[currentLevel].technologies}
+              achievements={projects[currentLevel].achievements}
+              image={projects[currentLevel].image}
+              link={projects[currentLevel].link}
+            />
+          </div>
         </div>
 
         <div className="flex justify-center gap-3 sm:gap-6">
           <button 
             onClick={prevLevel} 
             className="pixel-button text-xs sm:text-sm"
+            disabled={isAnimating}
           >
             PREV LEVEL
           </button>
           <button 
             onClick={nextLevel} 
             className="pixel-button text-xs sm:text-sm"
+            disabled={isAnimating}
           >
             NEXT LEVEL
           </button>

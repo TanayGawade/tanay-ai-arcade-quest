@@ -23,11 +23,11 @@ const Contact: React.FC = () => {
             
             <div className="space-y-4 sm:space-y-6">
               <a 
-                href="mailto:tanaygawade@example.com" 
+                href="mailto:tanaygawade2000@gmail.com" 
                 className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-gameboy-dark dark:text-gameboy-light hover:text-gameboy-green dark:hover:text-gameboy-accent transition-colors"
               >
                 <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="text-xs sm:text-sm">tanaygawade@example.com</span>
+                <span className="text-xs sm:text-sm">tanaygawade2000@gmail.com</span>
               </a>
               
               <a 

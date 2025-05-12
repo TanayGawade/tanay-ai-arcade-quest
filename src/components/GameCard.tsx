@@ -34,10 +34,18 @@ const GameCard: React.FC<GameCardProps> = ({
     }
   };
 
+  const handleCardClick = () => {
+    if (link && !isFlipped) {
+      window.open(link, "_blank", "noopener,noreferrer");
+    } else {
+      setIsFlipped(!isFlipped);
+    }
+  };
+
   return (
     <div 
       className="perspective-effect cursor-pointer w-full max-w-xs sm:max-w-md mx-auto" 
-      onClick={handleClick}
+      onClick={handleCardClick}
     >
       <div className={`relative transition-all duration-500 ${isFlipped ? "rotate-y-180" : ""}`} style={{ 
         transformStyle: "preserve-3d" 
