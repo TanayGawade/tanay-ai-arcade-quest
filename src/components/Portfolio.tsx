@@ -1,11 +1,24 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GameCard from "./GameCard";
 
 const Portfolio: React.FC = () => {
   const [currentLevel, setCurrentLevel] = useState(0);
 
   const projects = [
+    {
+      title: "LLM-Based Tumor Segmentation",
+      description: "Applied large language models to the task of medical image segmentation for tumor identification and classification.",
+      level: "EPIC QUEST",
+      technologies: ["PyTorch", "MONAI", "Transformers", "Medical Imaging"],
+      achievements: [
+        "Improved segmentation accuracy by 15%",
+        "Reduced false positives by 30%",
+        "Implemented in research hospital setting"
+      ],
+      image: "/lovable-uploads/6777cf71-5350-4f6c-81c5-b851387025b9.png",
+      link: "https://github.com/TanayGawade/LLm-based-tumor-segmentation"
+    },
     {
       title: "Bird Sound Denoising using Residual Blocks in U-Net",
       description: "Developed an advanced model for filtering out noise from bird sound recordings using a U-Net architecture with residual blocks.",
@@ -15,7 +28,8 @@ const Portfolio: React.FC = () => {
         "99.5% noise reduction while preserving bird calls",
         "Model deployed in conservation efforts",
         "Published in academic journals"
-      ]
+      ],
+      link: "https://github.com/TanayGawade/Bird_sound_denoising"
     },
     {
       title: "Face Recognition using Keras",
@@ -26,18 +40,8 @@ const Portfolio: React.FC = () => {
         "98% accuracy on benchmark datasets",
         "Real-time recognition capabilities",
         "Optimized for edge devices"
-      ]
-    },
-    {
-      title: "LLM-Based Tumor Segmentation",
-      description: "Applied large language models to the task of medical image segmentation for tumor identification and classification.",
-      level: "EPIC QUEST",
-      technologies: ["PyTorch", "MONAI", "Transformers", "Medical Imaging"],
-      achievements: [
-        "Improved segmentation accuracy by 15%",
-        "Reduced false positives by 30%",
-        "Implemented in research hospital setting"
-      ]
+      ],
+      link: "https://github.com/TanayGawade/facial-recognition"
     }
   ];
 
@@ -48,6 +52,16 @@ const Portfolio: React.FC = () => {
   const prevLevel = () => {
     setCurrentLevel((prev) => (prev - 1 + projects.length) % projects.length);
   };
+
+  // Auto scroll the projects every 5 seconds
+  useEffect(() => {
+    const autoScrollInterval = setInterval(() => {
+      nextLevel();
+    }, 5000);
+    
+    // Clear the interval when component unmounts
+    return () => clearInterval(autoScrollInterval);
+  }, []);
 
   return (
     <section id="portfolio" className="py-16 sm:py-20 px-4 bg-gameboy-softGray dark:bg-gameboy-dark">
@@ -68,6 +82,8 @@ const Portfolio: React.FC = () => {
             level={projects[currentLevel].level}
             technologies={projects[currentLevel].technologies}
             achievements={projects[currentLevel].achievements}
+            image={projects[currentLevel].image}
+            link={projects[currentLevel].link}
           />
         </div>
 

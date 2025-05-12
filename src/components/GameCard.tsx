@@ -8,6 +8,7 @@ interface GameCardProps {
   technologies: string[];
   achievements: string[];
   image?: string;
+  link?: string;
 }
 
 const GameCard: React.FC<GameCardProps> = ({
@@ -16,14 +17,26 @@ const GameCard: React.FC<GameCardProps> = ({
   level,
   technologies,
   achievements,
-  image
+  image,
+  link
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  const handleDetailsClick = (e: React.MouseEvent) => {
+    if (link) {
+      e.stopPropagation();
+      window.open(link, "_blank", "noopener,noreferrer");
+    }
+  };
 
   return (
     <div 
       className="perspective-effect cursor-pointer w-full max-w-xs sm:max-w-md mx-auto" 
-      onClick={() => setIsFlipped(!isFlipped)}
+      onClick={handleClick}
     >
       <div className={`relative transition-all duration-500 ${isFlipped ? "rotate-y-180" : ""}`} style={{ 
         transformStyle: "preserve-3d" 
@@ -98,9 +111,18 @@ const GameCard: React.FC<GameCardProps> = ({
           </div>
           
           <div className="flex justify-center mt-4">
-            <p className="font-pixel text-xs text-gameboy-green dark:text-gameboy-accent animate-blink">
-              CLICK TO RETURN
-            </p>
+            {link ? (
+              <button 
+                onClick={handleDetailsClick}
+                className="font-pixel text-xs bg-gameboy-green dark:bg-gameboy-accent text-gameboy-light dark:text-gameboy-dark py-1 px-3 rounded hover:opacity-80 transition-opacity"
+              >
+                VIEW PROJECT
+              </button>
+            ) : (
+              <p className="font-pixel text-xs text-gameboy-green dark:text-gameboy-accent animate-blink">
+                CLICK TO RETURN
+              </p>
+            )}
           </div>
         </div>
       </div>
