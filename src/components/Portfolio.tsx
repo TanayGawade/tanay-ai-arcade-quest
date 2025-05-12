@@ -50,18 +50,18 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <section id="portfolio" className="py-20 px-4 bg-gameboy-softGray dark:bg-gameboy-dark">
+    <section id="portfolio" className="py-16 sm:py-20 px-4 bg-gameboy-softGray dark:bg-gameboy-dark">
       <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-pixel text-gameboy-dark dark:text-gameboy-accent mb-6 text-center">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-pixel text-gameboy-dark dark:text-gameboy-accent mb-4 sm:mb-6 text-center">
           PROJECT LEVELS
         </h2>
         
-        <p className="text-center mb-12 text-gameboy-dark dark:text-gameboy-light max-w-2xl mx-auto">
+        <p className="text-center mb-8 sm:mb-12 text-xs sm:text-sm text-gameboy-dark dark:text-gameboy-light max-w-2xl mx-auto">
           Explore different projects I've developed using AI and machine learning technologies.
           Each project represents a challenge conquered in my AI journey.
         </p>
 
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-8 sm:mb-12">
           <GameCard 
             title={projects[currentLevel].title}
             description={projects[currentLevel].description}
@@ -71,26 +71,26 @@ const Portfolio: React.FC = () => {
           />
         </div>
 
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-3 sm:gap-6">
           <button 
             onClick={prevLevel} 
-            className="pixel-button"
+            className="pixel-button text-xs sm:text-sm"
           >
             PREV LEVEL
           </button>
           <button 
             onClick={nextLevel} 
-            className="pixel-button"
+            className="pixel-button text-xs sm:text-sm"
           >
             NEXT LEVEL
           </button>
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="font-pixel text-sm text-gameboy-dark dark:text-gameboy-accent">
+        <div className="mt-8 sm:mt-12 text-center">
+          <p className="font-pixel text-xs sm:text-sm text-gameboy-dark dark:text-gameboy-accent">
             LEVEL {currentLevel + 1}/{projects.length}
           </p>
-          <div className="w-48 mx-auto mt-2 progress-bar">
+          <div className="w-32 sm:w-48 mx-auto mt-2 progress-bar">
             <div 
               className="progress-fill transition-all duration-300" 
               style={{ width: `${((currentLevel + 1) / projects.length) * 100}%` }}

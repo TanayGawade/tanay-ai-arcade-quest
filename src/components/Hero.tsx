@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import PixelAvatar from "./PixelAvatar";
 
@@ -18,32 +19,30 @@ const Hero: React.FC = () => {
   const handleStart = () => {
     setGameStarted(true);
     setShowPressStart(false);
-    
-    // Removed auto-scrolling to about section
   };
 
   return (
-    <div id="home" className="min-h-screen pt-16 flex flex-col items-center justify-center relative overflow-hidden">
+    <div id="home" className="min-h-screen pt-16 px-4 flex flex-col items-center justify-center relative overflow-hidden">
       {!isLoaded ? (
         // Loading Screen
         <div className="w-full max-w-md text-center">
-          <h2 className="font-pixel text-gameboy-dark dark:text-gameboy-accent mb-4">LOADING ASSETS...</h2>
+          <h2 className="font-pixel text-gameboy-dark dark:text-gameboy-accent mb-4 text-base sm:text-lg">LOADING ASSETS...</h2>
           <div className="progress-bar mx-auto">
             <div className="progress-fill animate-progress-fill"></div>
           </div>
         </div>
       ) : (
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-2 sm:px-4 text-center">
           <div className={`transition-all duration-500 ${gameStarted ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-10'}`}>
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-pixel text-gameboy-dark dark:text-gameboy-accent mb-2">
               TANAY GAWADE
             </h1>
-            <p className="text-sm sm:text-base md:text-lg font-pixel text-gameboy-green dark:text-gameboy-light mb-8">
+            <p className="text-xs sm:text-sm md:text-lg font-pixel text-gameboy-green dark:text-gameboy-light mb-6 sm:mb-8">
               AI & MACHINE LEARNING SPECIALIST
             </p>
           </div>
 
-          <div className="mb-8 flex justify-center">
+          <div className="mb-6 sm:mb-8 flex justify-center">
             <PixelAvatar className={`transition-all duration-500 ${gameStarted ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`} />
           </div>
 
@@ -51,7 +50,7 @@ const Hero: React.FC = () => {
             <div className="animate-blink">
               <button 
                 onClick={handleStart}
-                className="font-pixel text-lg sm:text-xl text-gameboy-dark dark:text-gameboy-accent hover:text-gameboy-green dark:hover:text-gameboy-light transition-colors"
+                className="font-pixel text-base sm:text-lg text-gameboy-dark dark:text-gameboy-accent hover:text-gameboy-green dark:hover:text-gameboy-light transition-colors"
               >
                 PRESS START
               </button>
@@ -59,14 +58,14 @@ const Hero: React.FC = () => {
           )}
 
           {gameStarted && (
-            <div className="mt-10 animate-pixel-pop">
-              <p className="mb-6 text-gameboy-dark dark:text-gameboy-light max-w-2xl mx-auto">
+            <div className="mt-8 sm:mt-10 animate-pixel-pop">
+              <p className="mb-6 text-sm sm:text-base text-gameboy-dark dark:text-gameboy-light max-w-2xl mx-auto">
                 Welcome to my AI adventure! I'm an Artificial Intelligence specialist with expertise in machine learning, 
                 deep learning, natural language processing, computer vision, and data analytics.
               </p>
               <a 
                 href="https://drive.google.com/file/d/1h9UnXbNj9PRB8lG2Mz5rl3a7ncqXhFc6/view" 
-                className="pixel-button inline-block"
+                className="pixel-button inline-block text-xs sm:text-sm"
                 target="_blank"
                 rel="noopener noreferrer"
               >
