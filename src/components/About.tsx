@@ -1,4 +1,3 @@
-
 import React from "react";
 const About: React.FC = () => {
   const skills = [{
@@ -61,7 +60,9 @@ const About: React.FC = () => {
                   </div>
                   <div className="progress-bar relative">
                     <div className="progress-fill flex items-center justify-center" style={{
-                  width: `${stat.value}%`, height: '100%'}}>
+                  width: `${stat.value}%`,
+                  height: '100%'
+                }}>
                       <span className="font-pixel text-xs text-black dark:text-black absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center">{stat.value}/100</span>
                     </div>
                   </div>
@@ -70,8 +71,8 @@ const About: React.FC = () => {
 
             <h4 className="font-pixel text-xs sm:text-sm text-gameboy-dark dark:text-gameboy-accent mb-2">EQUIPMENT</h4>
             <ul className="font-pixel text-xs text-gameboy-dark dark:text-gameboy-light space-y-1 mb-4">
-              <li>- MSc IN ARTIFICIAL INTELLIGENCE [YESHIVA UNIVERSITY]</li>
-              <li>- BSc IN ELECTRONICS ENGINEERING [UNIVERSITY OF MUMBAI]</li>
+              <li>- MS IN ARTIFICIAL INTELLIGENCE    [ YESHIVA UNIVERSITY ]</li>
+              <li>- BE IN ELECTRONICS ENGINEERING    [ UNIVERSITY OF MUMBAI ]</li>
             </ul>
 
             <h4 className="font-pixel text-xs sm:text-sm text-gameboy-dark dark:text-gameboy-accent mb-2">SPECIAL ABILITIES</h4>
